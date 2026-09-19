@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_cors import CORS
 
-from routes.health import health_bp
+from Backend.routes.health import health_bp
+from Backend.routes.prediction import prediction_bp
 
 
 def create_app():
@@ -10,6 +11,7 @@ def create_app():
     CORS(app)
 
     app.register_blueprint(health_bp)
+    app.register_blueprint(prediction_bp)
 
     @app.route("/")
     def home():

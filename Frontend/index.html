@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Master Planner | ML Prediction Platform</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div>
+            <h1>AI Master Planner</h1>
+            <p>Data Analytics + Machine Learning + Prediction Platform</p>
+        </div>
+
+        <div class="api-status">
+            <span class="status-dot"></span>
+            <span>API Offline</span>
+        </div>
+    </header>
+
+
+    <main class="dashboard">
+
+        <!-- Overview -->
+        <section class="section">
+            <h2>Prediction Overview</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <span class="card-title">Total Records</span>
+                    <strong id="totalRecords">--</strong>
+                </div>
+
+                <div class="card">
+                    <span class="card-title">Current Prediction</span>
+                    <strong id="currentPrediction">--</strong>
+                </div>
+
+                <div class="card">
+                    <span class="card-title">Confidence Score</span>
+                    <strong id="confidenceScore">--</strong>
+                </div>
+
+                <div class="card">
+                    <span class="card-title">Confidence Category</span>
+                    <strong id="confidenceCategory">--</strong>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Prediction -->
+        <section class="section prediction-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>ML Prediction</h2>
+                    <p>Generate a prediction using the trained ensemble.</p>
+                </div>
+
+                <button id="runPredictionBtn">
+                    Run Prediction
+                </button>
+            </div>
+
+
+            <div class="prediction-result">
+
+                <div class="prediction-main">
+                    <span>Predicted Value</span>
+                    <strong id="predictionValue">--</strong>
+                    <small id="predictionDate">Prediction date: --</small>
+                </div>
+
+
+                <div class="prediction-details">
+
+                    <div>
+                        <span>Target</span>
+                        <strong id="targetColumn">--</strong>
+                    </div>
+
+                    <div>
+                        <span>Ensemble Probability</span>
+                        <strong id="ensembleProbability">--</strong>
+                    </div>
+
+                    <div>
+                        <span>Model Agreement</span>
+                        <strong id="modelAgreement">--</strong>
+                    </div>
+
+                    <div>
+                        <span>Unique Predictions</span>
+                        <strong id="uniquePredictions">--</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Models -->
+        <section class="section">
+
+            <h2>Individual Model Predictions</h2>
+
+            <div class="model-grid">
+
+                <div class="model-card">
+                    <span>Random Forest</span>
+                    <strong id="randomForest">--</strong>
+                </div>
+
+                <div class="model-card">
+                    <span>XGBoost</span>
+                    <strong id="xgboost">--</strong>
+                </div>
+
+                <div class="model-card">
+                    <span>LightGBM</span>
+                    <strong id="lightgbm">--</strong>
+                </div>
+
+                <div class="model-card">
+                    <span>CatBoost</span>
+                    <strong id="catboost">--</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Probability -->
+        <section class="section">
+
+            <h2>Ensemble Probability Distribution</h2>
+
+            <div id="probabilityGrid" class="probability-grid">
+
+                <div class="probability-item">
+                    <span>0</span>
+                    <strong>--</strong>
+                </div>
+
+                <div class="probability-item">
+                    <span>1</span>
+                    <strong>--</strong>
+                </div>
+
+                <div class="probability-item">
+                    <span>2</span>
+                    <strong>--</strong>
+                </div>
+
+                <div class="probability-item">
+                    <span>3</span>
+                    <strong>--</strong>
+                </div>
+
+                <div class="probability-item">
+                    <span>4</span>
+                    <strong>--</strong>
+                </div>
+
+                <div class="probability-item">
+                    <span>5</span>
+                    <strong>--</strong>
+                </div>
+
+                <div class="probability-item">
+                    <span>6</span>
+                    <strong>--</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- History -->
+        <section class="section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Prediction History</h2>
+                    <p>Previously generated predictions.</p>
+                </div>
+
+                <button id="refreshHistoryBtn" class="secondary-btn">
+                    Refresh
+                </button>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Target</th>
+                            <th>Prediction</th>
+                            <th>Probability</th>
+                            <th>Confidence</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="historyTableBody">
+
+                        <tr>
+                            <td colspan="7">
+                                No prediction history loaded.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>AI Master Planner • Local ML Prediction Platform</p>
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
